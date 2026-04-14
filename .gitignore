@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Nx
+.nx/
+dist/
+*.orig
+.husky/_
+
+# IDEs
+.vscode/
+*.swp
+*.swo
+*~
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+build/
+coverage/
+
+# Environment
+.env
+.env.local
+*.log
+
+# Testing
+.nyc_output/
+
+# Cache
+.next/
+out/

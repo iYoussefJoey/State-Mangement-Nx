@@ -1,5 +1,5 @@
 {
-  "name": "State-Mangement-Nx",
+  "name": "State-Management-Nx",
   "version": "0.0.0",
   "private": true,
   "devDependencies": {
@@ -31,6 +31,7 @@
     "autoprefixer": "^10.4.0",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^10.0.0",
+    "eslint-plugin-jsdoc": "^62.9.0",
     "eslint-plugin-playwright": "^1.6.2",
     "jest": "^30.0.2",
     "jest-environment-jsdom": "^30.0.2",

@@ -1,2 +1,10 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<temp-navi-component [opened]="isOpened">
+  <temp-header-component
+    [opened]="isOpened"
+    (toggleSide)="toggleSideNav()"
+  ></temp-header-component>
+  <div>
+    <h1 class="text-3xl font-bold underline bg-blue-600">Hello world!</h1>
+  </div>
+  <router-outlet></router-outlet>
+</temp-navi-component>

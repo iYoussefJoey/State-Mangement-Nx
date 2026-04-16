@@ -1,5 +1,6 @@
 import nx from '@nx/eslint-plugin';
 import jsdoc from 'eslint-plugin-jsdoc';
+import unusedimports from 'eslint-plugin-unused-imports';
 export default [
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
@@ -38,6 +39,7 @@ export default [
     ],
     plugins: {
       jsdoc,
+      'unused-imports': unusedimports,
     },
     rules: {
       'jsdoc/require-jsdoc': [
@@ -48,29 +50,45 @@ export default [
             'ClassDeclaration',
             'FunctionDeclaration',
             'MethodDefinition',
-            'ArrowFunctionExpression',
             'FunctionExpression',
           ],
           require: {
             ClassDeclaration: true,
             FunctionDeclaration: true,
             MethodDefinition: true,
-            ArrowFunctionExpression: true,
             FunctionExpression: true,
           },
+        },
+      ],
+      'unused-imports/no-unused-imports': ['error'],
+      'unused-imports/no-unused-vars': [
+        'error',
+        {
+          vars: 'all',
+          args: 'after-used',
+          ignoreRestSiblings: true,
         },
       ],
       '@typescript-eslint/explicit-function-return-type': [
         'error',
         {
-          allowExpressions: false,
-          allowTypedFunctionExpressions: false,
-          allowHigherOrderFunctions: false,
+          allowExpressions: true,
+          allowTypedFunctionExpressions: true,
+          allowHigherOrderFunctions: true,
         },
       ],
       'jsdoc/require-param': 'error',
       'jsdoc/require-returns': 'error',
       'jsdoc/require-returns-check': 'error',
+      'jsdoc/require-description': 'error',
+      'padding-line-between-statements': [
+        'error',
+        {
+          blankLine: 'always',
+          prev: '*',
+          next: 'return',
+        },
+      ],
     },
   },
   {

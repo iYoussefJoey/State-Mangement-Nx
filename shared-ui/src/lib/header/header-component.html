@@ -1,9 +1,18 @@
-<mat-toolbar color="primary" class="header">
-  <button (click)="toggleSide.emit()">
-    @if (opened()) {
-    <svg lucidePanelLeftClose></svg>
-    } @else {
-    <svg lucidePanelRightClose></svg>
-    }
-  </button>
+<mat-toolbar>
+  <div class="flex space-between">
+    <button (click)="toggleSide.emit()">
+      @if (opened()) {
+      <svg lucidePanelLeftClose></svg>
+      } @else {
+      <svg lucidePanelRightClose></svg>
+      }
+    </button>
+    <button (click)="themeService.toggleTheme()">
+      @if (themeService.isDarkMode()){
+      <svg lucideSun></svg>
+      } @else {
+      <svg lucideMoon></svg>
+      }
+    </button>
+  </div>
 </mat-toolbar>

@@ -1,2 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use './scss/theme-tokens.scss' as tokens;
+@use './scss/color-tokens.scss' as color-tokens;
 @import 'tailwindcss';
+
+@include mat.core();
+
+//Light Mode
+html {
+  height: 100vh;
+  @include mat.all-component-themes(tokens.$light-theme);
+  @include mat.system-level-colors(tokens.$light-theme);
+  @include mat.system-level-typography(tokens.$light-theme);
+}
+
+//Dark Mode
+.dark-mode {
+  @include mat.all-component-themes(tokens.$dark-theme);
+  @include mat.system-level-colors(tokens.$dark-theme);
+  @include mat.system-level-typography(tokens.$dark-theme);
+}

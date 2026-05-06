@@ -1,9 +1,16 @@
 @use '@angular/material' as mat;
 
 .sidenav-container {
+  @apply h-screen;
   @include mat.sidenav-overrides(
     (
       container-width: 277px,
     )
   );
+  &__content {
+    background-color: var(--mat-sys-surface);
+    &-button {
+      background-color: var(--mat-sys-primary);
+    }
+  }
 }

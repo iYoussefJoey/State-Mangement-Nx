@@ -1,16 +1,11 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #sidenav
-    mode="side"
-    [opened]="opened()"
-    (opened)="events.push('open!')"
-    (closed)="events.push('close!')"
-  >
+  <mat-sidenav #sidenav mode="side" [opened]="opened()">
     Sidenav content
   </mat-sidenav>
 
   <mat-sidenav-content class="sidenav-container__content">
     <ng-content></ng-content>
-    <h1 class="bg-gray-300">contact</h1>
+    <h1>contact</h1>
+    <button class="sidenav-container__content-button">hello</button>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -14,7 +14,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 })
 export class NaviComponent {
   // STATE
-  events: string[] = [];
   // INPUT
   opened = input<boolean>(false);
   // OUTPUT

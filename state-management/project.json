@@ -1,5 +1,5 @@
 {
-  "name": "state-management",
+  "name": "myproject",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
@@ -51,10 +51,10 @@
       "executor": "@angular/build:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "state-management:build:production"
+          "buildTarget": "myproject:build:production"
         },
         "development": {
-          "buildTarget": "state-management:build:development"
+          "buildTarget": "myproject:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
       "continuous": true,
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "state-management:build",
+        "buildTarget": "myproject:build",
         "port": 4200,
         "staticFilePath": "dist/state-management/browser",
         "spa": true

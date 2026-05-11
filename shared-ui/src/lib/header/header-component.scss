@@ -1,0 +1,4 @@
+@import 'tailwind';
+.header__content {
+  @apply flex w-full justify-between p-3;
+}

@@ -1,5 +1,5 @@
 {
-  "name": "myproject",
+  "name": "ng-blueprint",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
@@ -10,6 +10,9 @@
       "executor": "@angular/build:application",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "stylePreprocessorOptions": {
+          "includePaths": ["state-management/src/scss"]
+        },
         "outputPath": "dist/state-management",
         "browser": "state-management/src/main.ts",
         "tsConfig": "state-management/tsconfig.app.json",
@@ -51,10 +54,10 @@
       "executor": "@angular/build:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "myproject:build:production"
+          "buildTarget": "ng-blueprint:build:production"
         },
         "development": {
-          "buildTarget": "myproject:build:development"
+          "buildTarget": "ng-blueprint:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -74,7 +77,7 @@
       "continuous": true,
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "myproject:build",
+        "buildTarget": "ng-blueprint:build",
         "port": 4200,
         "staticFilePath": "dist/state-management/browser",
         "spa": true
